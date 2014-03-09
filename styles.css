@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+#sidenav
+{
+    width: 7.5%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    background-color: #50585E;
+    min-width: 50px;
+    z-index: -1;
+}
+#space
+{
+    height: 5%;
+    min-height: 30px;
+}
+#header
+{
+    width: 100%;
+    float: left;
+    height: 5%;
+    min-height: 30px;
+    position: fixed;
+    background-color: #50585E;
+}
+#all
+{
+    margin-top: 7.5%;
+    width: 92.5%;
+    height: 1000px;
+    float: right;
+}
+#titles
+{
+    transition: all .5s ease;
+    position: absolute;
+    float: left;
+    height: 80%;
+    margin: auto;
+    margin-top: .35%;
+    margin-left: 5px;
+}
+#titles:hover
+{
+    padding-left: .5%;
+    -webkit-filter: invert(100%);
+}
+#FB
+{
+    transition: all .5s ease;
+    height: 100%;
+    padding-right: 0%;
+    float: right;
+}
+#FB:hover
+{
+    padding-right: .5%;
+    -webkit-filter: invert(100%);
+}
+[class^="img"]
+{
+    display: inline-block;
+    width: inherit;
+}
+[class^="img"] img
+{
+    display: block;
+    width: inherit;
+}
+.img-100 img
+{
+    transition: all .5s ease;
+    padding-left: 10%;
+    padding-top: 10%;
+    max-width: 80%;
+    min-width: 50%;
+}
+.img-100 img:hover
+{
+    padding-left: 5%;
+    padding-top: 15%;
+    max-width: 90%;
+    min-width: 60%;
+    -webkit-filter: invert(100%);
+}
+#nav
+{
+    list-style: none;
+}
