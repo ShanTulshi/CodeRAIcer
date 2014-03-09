@@ -50,18 +50,33 @@
       </a>
     </div>
     <div id="body">
+<<<<<<< HEAD
       <div id="header">
-        <a href="/login.html"><img id="FB" src="FB.png"></a>
+        <a href="login.html"><img id="FB" src="FB.png"></a>
         <a href="index.html"><img id = "titles" src = "CodeTitle.PNG"></a>
       </div>
       <div id="all">
         <br>
         
-        <table style = "width: 1000px; height: 1000"><tr><td style = "width: 15%"><br>
+        <table style = "width: 1000; height: 1000"><tr><td style = "width: 15%"><br>
               <button id="submitButton" onclick="submitCode()">Submit Code</button><br>
-              <button id="runButton" onclick="toggleRunning(this)">Start</button> <br><br><br></td>
+              <button id="runButton" onclick="toggleRunning(this)">Start</button> <br><br></td>
+            <td style = "width: 85%">
+              <div style = "height: 100%">
+=======
+        <div id="header">
+            <a href="/login.html"><img id="FB" src="FB.png"></a>
+            <a href="index.html"><img id = "titles" src = "CodeTitle.PNG"></a>
+        </div>
+        <div id="all">
+            <br>
+            
+            <table style = "width: 1000px; height: 1000"><tr><td style = "width: 15%"><br>
+            <button id="submitButton" onclick="submitCode()">Submit Code</button><br>
+            <button id="runButton" onclick="toggleRunning(this)">Start</button> <br><br><br></td>
             <td style = "width: 90%">
-              <div style = "height: 1000">
+            <div style = "height: 1000">
+>>>>>>> origin/master
                 <script type=text/javascript>
 		  var b2world = new Box2D.Dynamics.b2World(new Box2D.Common.Math.b2Vec2(), true);
 		</script>
