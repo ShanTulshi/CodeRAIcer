@@ -6,13 +6,14 @@
     height: 100%;
     float: left;
     position: fixed;
-    background-color: #50585E;
+    background-color: #3B5998;
     min-width: 50px;
     z-index: -1;
+    box-shadow: 1px 1px 5px black;
 }
 #space
 {
-    height: 5%;
+    height: 6%;
     min-height: 30px;
 }
 #header
@@ -22,7 +23,8 @@
     height: 5%;
     min-height: 30px;
     position: fixed;
-    background-color: #50585E;
+    background-color: #3B5998;
+    box-shadow: 1px 1px 5px black;
 }
 #all
 {
@@ -33,18 +35,19 @@
 }
 #titles
 {
-    transition: all .5s ease;
+    transition: all 1s ease;
     position: absolute;
     float: left;
     height: 80%;
     margin: auto;
     margin-top: .35%;
     margin-left: 5px;
+    -webkit-filter: invert(100%);
 }
 #titles:hover
 {
     padding-left: .5%;
-    -webkit-filter: invert(100%);
+    -webkit-filter: invert(0%);
 }
 #FB
 {
@@ -52,11 +55,12 @@
     height: 100%;
     padding-right: 0%;
     float: right;
+    -webkit-filter: invert(100%);
 }
 #FB:hover
 {
     padding-right: .5%;
-    -webkit-filter: invert(100%);
+    -webkit-filter: invert(0%);
 }
 [class^="img"]
 {
@@ -75,6 +79,7 @@
     padding-top: 10%;
     max-width: 80%;
     min-width: 50%;
+    -webkit-filter: invert(100%);
 }
 .img-100 img:hover
 {
@@ -82,7 +87,7 @@
     padding-top: 15%;
     max-width: 90%;
     min-width: 60%;
-    -webkit-filter: invert(100%);
+    -webkit-filter: invert(0%);
 }
 #nav
 {

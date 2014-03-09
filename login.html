@@ -5,11 +5,14 @@
     <title>Code rAIcing: Facebook Login</title>
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="FB.css">
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'>
+        var myRootRef = new Firebase('https://myprojectname.firebaseIO-demo.com/');
+        myRootRef.set('Hello World!');
+    </script>
 </head>
 <body>
-
+    <div id="body">
+        <Button type="button"><a href="/login.html">Login to Facebook</a></Button>
+    </div>
 </body>
 </html>
-
-
-
