@@ -49,13 +49,35 @@
             <a href="index.html"><img id = "titles" src = "CodeTitle.PNG"></a>
         </div>
         <div id="all">
-            <script type=text/javascript>
+            <br>
+            
+            <table style = "width: 1000px; height: 1000"><tr><td style = "width: 15%"><br>
+            <button id="submitButton" onclick="submitCode()">Submit Code</button><br>
+            <button id="runButton" onclick="toggleRunning(this)">Start</button> <br><br><br></td>
+            <td style = "width: 90%">
+            <div style = "height: 1000">
+                <script type=text/javascript>
               var worldAABB = new Box2D.Collision.b2AABB();
               worldAABB.lowerBound.Set(-100, -100);
               worldAABB.upperBound.Set(100, 100);
               var b2world = new Box2D.Dynamics.b2World(worldAABB, new Box2D.Common.Math.b2Vec2(), true);
             </script>
-            <textarea id="codearea" width="700" height="500">
+                <canvas id="gameCanvas" width="1000px" height="250px" style="min-height: 250; min-width: 500"></canvas>
+                <script src="game/RaicerComponent.js"></script>
+                <script src="game/RaicerTread.js"></script>
+                <script src="game/RaicerBody.js"></script>
+                <!--<script src="game/RaicerRadar.js"></script>-->
+                <script src="game/RaicerGun.js"></script>
+                <script src="game/raicer.js"></script>
+                <script src="script.js"></script>
+            </div>
+            </td>
+            <tr>
+            <td>
+            LIST GOES HERE
+            </td><td>
+            <div id="testarea">
+            <textarea id="codearea" width="75%" height="500">
 function init()
 {
     testRaicer.wholeBody.GetPosition().x = 100;
@@ -66,19 +88,10 @@ function update()
     testRaicer.acclerateLeft(10);
 }
             </textarea>
+            </div></td></tr>
+            </table>
             <script src="edit/edit.js"></script>
-            <button id="submitButton" onclick="submitCode()">Submit Code</button>
-            <button id="runButton" onclick="toggleRunning(this)">Start</button>
-            <div>
-                <canvas id="gameCanvas" width="1000px" height="100px"></canvas>
-                <script src="game/RaicerComponent.js"></script>
-                <script src="game/RaicerTread.js"></script>
-                <script src="game/RaicerBody.js"></script>
-                <!--<script src="game/RaicerRadar.js"></script>-->
-                <script src="game/RaicerGun.js"></script>
-                <script src="game/raicer.js"></script>
-                <script src="script.js"></script>
-            </div>
+            
         </div>
     </div>
 </body>
