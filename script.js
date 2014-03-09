@@ -1,3 +1,5 @@
+
+
 // Facebook
 var firebase = new Firebase("https://coderaicing.firebaseio.com");
 var auth = new FirebaseSimpleLogin(firebase, function (error, user) {
@@ -29,7 +31,7 @@ function render(dt) {
     context.restore();
     
     b2world.Step(1.0/60.0, 10, 10);
-    b2world.DrawDebugData();
+    // b2world.DrawDebugData();
     if (running && frame != null && frame.contentWindow != null) {
 	frame.contentWindow.update();
     }
