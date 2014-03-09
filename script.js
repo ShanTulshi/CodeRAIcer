@@ -1,17 +1,11 @@
 
 
-// Facebook
-var firebase = new Firebase("https://coderaicing.firebaseio.com");
-var auth = new FirebaseSimpleLogin(firebase, function (error, user) {
-
-});
-// auth.login("facebook");
-
 // Game Logic
 var canvas = document.getElementById("gameCanvas");
 var context = canvas.getContext("2d");
 
 var testRaicer = new Raicer();
+var raicerController = new RaicerController(testRaicer);
 
 // Sandbox
 var frame = null;
@@ -25,14 +19,16 @@ submitButton.disabled = false;
 
 function render(dt) {
     'use strict';
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.save();
-    testRaicer.draw(context);
-    context.restore();
-    
-    b2world.Step(1.0/60.0, 10, 10);
-    // b2world.DrawDebugData();
+
     if (running && frame != null && frame.contentWindow != null) {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.save();
+	testRaicer.draw(context, canvas.height);
+	context.restore();
+	b2world.Step(1.0/60.0, 10, 10);
+	b2world.ClearForces();
+	raicerController.update(testRaicer, dt);
+	// b2world.DrawDebugData()
 	frame.contentWindow.update();
     }
 }
@@ -50,7 +46,7 @@ b2world.SetDebugDraw(dbg);
 
 // Game loop
 function timestamp() {
-  return window.performance && window.performance.now ? window.performance.now() : new Date().getTime();
+    return window.performance && window.performance.now ? window.performance.now() : new Date().getTime();
 }
 
 
@@ -102,7 +98,7 @@ function submitCode() {
 	document.body.removeChild(frame);
 	runButton.disabled = true;
     } else {
-	frame.contentWindow.testRaicer = testRaicer;
+	frame.contentWindow.control = raicerController;
 	frame.contentWindow.Vec2 = Box2D.Common.Math.b2Vec2;
 	runButton.disabled = false;
     }

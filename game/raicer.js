@@ -18,10 +18,14 @@ function Raicer() {
     // this.radar = RaicerRadar.types[0];
 };
 
-Raicer.prototype.draw = function(context) {
+Raicer.prototype.draw = function(context, ysize) {
+    // Update physax
+    this.wholeBody.SetAngle(this.angle);
+    this.wholeBody.ApplyImpulse(new Box2D.Common.Math.b2Vec2(this.speed * Math.sin(this.angle), this.speed * Math.cos(this.angle)), this.wholeBody.GetWorldCenter());
+
+
     this.position.SetV(this.wholeBody.GetPosition());
-    this.angle = this.wholeBody.GetAngle();
-    context.translate(this.position.x, this.position.y);
+    context.translate(this.position.x, ysize -  this.position.y);
     context.rotate(this.angle);
     context.save();
     this.tread.draw(context);
@@ -51,17 +55,4 @@ Raicer.prototype.implementPhysics = function() {
     
     this.wholeBody.CreateFixture(fixDef);
 
-};
-
-Raicer.prototype.acclerateLeft = function(power) {
-    if(this.currentPowerUsage + power > MAX_POWER_USAGE) {
-	power = MAX_POWER_USAGE - this.currentPowerUsage;
-    }
-    this.wholeBody.ApplyImpulse(
-	new Box2D.Common.Math.b2Vec2(
-	    power*FORCE_FACTOR*Math.cos(this.angle),
-	    power*FORCE_FACTOR*Math.sin(this.angle)
-	),
-	this.wholeBody.GetWorldPoint(new Box2D.Common.Math.b2Vec2(0, 0))
-    );
 };

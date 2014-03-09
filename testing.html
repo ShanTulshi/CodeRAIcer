@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="lib/codemirror.css">
     <script src="mode/javascript/javascript.js"></script>
     <script src="Box2dWeb-2.1.a.3.js"></script>
-    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.6/firebase.js'></script>
-    <script type='text/javascript'
-            src='https://cdn.firebase.com/js/simple-login/1.3.0/firebase-simple-login.js'>
-    </script>
     <script>
       // Global Variables
       var PIXEL_TO_METER = 1/25;
@@ -26,11 +22,10 @@
     <!-- Coding Frame -->
     <textarea id="codearea" width="700" height="500">
       function init() {
-        testRaicer.wholeBody.GetPosition().x = 100;
-        testRaicer.wholeBody.GetPosition().y = 100;
+        control.setAngle(Math.PI / 4);
+        control.setAcceleration(2);
       }
       function update() {
-        testRaicer.acclerateLeft(10);
       }
     </textarea>
     <script src="edit/edit.js"></script>
@@ -44,8 +39,8 @@
       <script src="game/RaicerComponent.js"></script>
       <script src="game/RaicerTread.js"></script>
       <script src="game/RaicerBody.js"></script>
-      <script src="game/RaicerRadar.js"></script>
       <script src="game/RaicerGun.js"></script>
+      <script src="game/RaicerController.js"></script>
       <script src="game/raicer.js"></script>
 
       <script src="script.js"></script>
