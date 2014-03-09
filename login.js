@@ -8,6 +8,7 @@ function login() {
 	  } else {
 
 	  }
+        alert(user.accessToken);
 	  window.location.replace("index.html");
 	});
 	var oAuth = localStorage.getItem("facebookOAuth");
