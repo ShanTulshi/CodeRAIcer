@@ -1,14 +1,15 @@
 @charset "utf-8";
-
 body
 {
     background-color: #50585E;
 }
-
 button
 {
     transition: all .5s;
-    margin: auto;
+    margin-left: 40%;
+    margin-top: 26%;
+    width: 20%;
+    height: 10%;
     padding: 10px 15px;
     background: #4479BA;
     color: #FFF;
@@ -21,7 +22,6 @@ button
     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-
 button:hover
 {
     background: #356094;
@@ -31,16 +31,14 @@ button:hover
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-
-button:active {
+button:active
+{
     -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
     background: #2E5481;
     border: solid 1px #203E5F;
 }
-
-
 a
 {
     transition: all .5s;

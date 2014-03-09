@@ -28,14 +28,14 @@
 }
 #all
 {
-    margin-top: 7.5%;
+    
     width: 92.5%;
     height: 1000px;
     float: right;
 }
 #titles
 {
-    transition: all 1s ease;
+    transition: all .5s ease;
     position: absolute;
     float: left;
     height: 80%;
