@@ -11,6 +11,10 @@
     z-index: 1;
     box-shadow: 1px 1px 5px black;
 }
+#h2
+{
+    font-family: "Copperplate Gothic";
+}
 .index-pop
 {
     transition: .5s all ease;
