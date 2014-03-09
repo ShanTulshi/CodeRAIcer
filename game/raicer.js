@@ -1,10 +1,3 @@
-var MAX_SPEED = 50;
-var LEFT_SIDE = 1;
-var RIGHT_SIDE = 2;
-var BOTH_SIDES = 0;
-var MAX_POWER_USAGE = 100; // No idea what the values are so i did arbitrary
-var FORCE_FACTOR = 0.1;
-
 function Raicer() {
     this.position = new Box2D.Common.Math.b2Vec2();
     this.body = RaicerBody.types[0];

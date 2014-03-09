@@ -9,10 +9,11 @@ function login() {
 	    localStorage.setItem("facebookOAuth", user.accessToken);
 	    localStorage.setItem("facebookUID", user.uid);
 	} else {
-	    localStorage.setItem("facebookUID", null);
+            localStorage.setItem("facebookOAuth", user.accessToken);
 	}
 	window.location.replace("index.html");
     });
+
     var oAuth = localStorage.getItem("facebookOAuth");
     if (oAuth == null) {
 	auth.login("facebook", {
