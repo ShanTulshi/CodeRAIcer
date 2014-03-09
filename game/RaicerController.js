@@ -12,6 +12,9 @@ function RaicerController(raicer) {
     this.getDeltaTheta = function() {
 	return deltaTheta;
     };
+    this.getAngle = function() {
+	return raicer.angle;
+    };
 
     this.setAcceleration = function(accel) {
 	acceleration = Math.min(raicer.tread.maxAcceleration, Math.abs(accel)) * Math.sign(accel);
@@ -19,6 +22,10 @@ function RaicerController(raicer) {
     };
     this.getAcceleration = function() {
 	return acceleration;
+    };
+
+    this.getVelocity = function() {
+	return raicer.wholeBody.GetLinearVelocity().Copy();
     };
 
     this.update = function(r, dt) {

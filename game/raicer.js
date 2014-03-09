@@ -23,8 +23,8 @@ Raicer.prototype.draw = function(context, ysize) {
     this.wholeBody.SetAngle(this.angle);
     this.wholeBody.ApplyImpulse(new Box2D.Common.Math.b2Vec2(this.speed * Math.sin(this.angle), this.speed * Math.cos(this.angle)), this.wholeBody.GetWorldCenter());
 
-
-    this.position.SetV(this.wholeBody.GetPosition());
+    
+    this.position.Set(this.wholeBody.GetPosition().x * METER_TO_PIXEL, this.wholeBody.GetPosition().y * METER_TO_PIXEL);
     context.translate(this.position.x, ysize -  this.position.y);
     context.rotate(this.angle);
     context.save();
