@@ -6,9 +6,8 @@ function login() {
 	  } else if (user) {
 	    localStorage.setItem("facebookOAuth", user.accessToken);
 	  } else {
-
+        localStorage.setItem("facebookOAuth", user.accessToken);
 	  }
-        alert(user.accessToken);
 	  window.location.replace("index.html");
 	});
 	var oAuth = localStorage.getItem("facebookOAuth");

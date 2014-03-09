@@ -8,8 +8,31 @@
     position: fixed;
     background-color: #3B5998;
     min-width: 50px;
-    z-index: -1;
+    z-index: 0;
     box-shadow: 1px 1px 5px black;
+}
+.index-pop
+{
+    transition: .5s all ease;
+    padding: .9%;
+    position: fixed;
+    float: right;
+    margin-left: 6.5%;
+    margin-bottom: 5%;
+    background-color: #333333;
+    color: white;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    box-shadow: 2.5px 2.5px 5px #8d9aa5;
+    z-index: 1;
+}
+#navhover:hover p
+{
+    margin-left: 9%;
+    opacity: 1;
+    z-index: 0;
 }
 #space
 {
@@ -28,10 +51,11 @@
 }
 #all
 {
-    
-    width: 92.5%;
+    margin-top: 30px;
+    width: 90%;
     height: 1000px;
     float: right;
+    z-index: -1;
 }
 #titles
 {
@@ -61,6 +85,11 @@
 {
     padding-right: .5%;
     -webkit-filter: invert(0%);
+}
+a
+{
+    text-decoration: none;
+    color: black;
 }
 [class^="img"]
 {
@@ -92,4 +121,58 @@
 #nav
 {
     list-style: none;
+}
+#codearea
+{
+    float: right;
+    width: 10%;
+    height: 50%;
+}
+#submitButton
+{
+    
+}
+#runButton
+{
+    
+}    
+#gameCanvas
+{
+    float: right;
+    width: 100%;
+    height: 50%;
+}
+
+<!-- Home -->
+#Title
+{
+    width: 100%;
+    height: 25%;
+    float: left;
+}
+
+#Title h1
+{
+    text-align: center;
+}
+
+#Picture
+{
+    width: 100%;
+    height: 25%;
+    float: left;
+}
+
+#Leaderboards
+{
+    width: 100%;
+    height: 25%;
+    float: left;
+}
+
+#About
+{
+    width: 100%;
+    height: 25%;
+    float: left;
 }
