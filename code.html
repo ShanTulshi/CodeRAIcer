@@ -51,7 +51,7 @@
         <div id="all">
             <br>
             
-            <table style = "width: 100%; height: 30%"><tr><td style = "width: 15%"><br>
+            <table style = "width: 100%; height: 100%"><tr><td style = "width: 15%"><br>
             <button id="submitButton" onclick="submitCode()">Submit Code</button><br>
             <button id="runButton" onclick="toggleRunning(this)">Start</button> <br><br></td>
             <td style = "width: 85%">
@@ -62,7 +62,7 @@
               worldAABB.upperBound.Set(100, 100);
               var b2world = new Box2D.Dynamics.b2World(worldAABB, new Box2D.Common.Math.b2Vec2(), true);
             </script>
-                <canvas id="gameCanvas" width="100%" height="100%" style="min-height: 250px; min-width: 250px"></canvas>
+                <canvas id="gameCanvas" width="1000px" height="250px" style="min-height: 250; min-width: 500"></canvas>
                 <script src="game/RaicerComponent.js"></script>
                 <script src="game/RaicerTread.js"></script>
                 <script src="game/RaicerBody.js"></script>
@@ -72,10 +72,10 @@
                 <script src="script.js"></script>
             </div>
             </td>
+            <tr>
             <td>
-            
-            </td></tr>
-            <tr><td>
+            LIST GOES HERE
+            </td><td>
             <div id="testarea">
             <textarea id="codearea" width="75%" height="500">
 function init()
