@@ -27,12 +27,24 @@ function render(dt) {
     context.save();
     testRaicer.draw(context);
     context.restore();
+    
+    b2world.Step(1.0/60.0, 10, 10);
+    b2world.DrawDebugData();
     if (running && frame != null && frame.contentWindow != null) {
 	frame.contentWindow.update();
     }
 }
 
 testRaicer.implementPhysics();
+
+var b2DebugDraw = Box2D.Dynamics.b2DebugDraw;
+var dbg = new b2DebugDraw();
+dbg.SetSprite(context);
+dbg.SetDrawScale(30);
+dbg.SetFillAlpha(0.5);
+dbg.SetLineThickness(1.0);
+dbg.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
+b2world.SetDebugDraw(dbg);
 
 // Game loop
 function timestamp() {
@@ -89,6 +101,7 @@ function submitCode() {
 	runButton.disabled = true;
     } else {
 	frame.contentWindow.testRaicer = testRaicer;
+	frame.contentWindow.Vec2 = Box2D.Common.Math.b2Vec2;
 	runButton.disabled = false;
     }
 }

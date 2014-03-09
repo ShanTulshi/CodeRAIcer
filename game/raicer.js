@@ -47,7 +47,7 @@ Raicer.prototype.implementPhysics = function() {
     fixDef.friction = 0.3;
     fixDef.restitution = 0.4;
     fixDef.shape = new Box2D.Collision.Shapes.b2PolygonShape();
-    fixDef.shape.SetAsBox(this.width/2, this.length/2);
+    fixDef.shape.SetAsBox(1, 1);
     
     this.wholeBody.CreateFixture(fixDef);
 
@@ -64,5 +64,4 @@ Raicer.prototype.acclerateLeft = function(power) {
 	),
 	this.wholeBody.GetWorldPoint(new Box2D.Common.Math.b2Vec2(0, 0))
     );
-    
 };
