@@ -1,5 +1,5 @@
 function Raicer() {
-    this.position = new Box2D.Common.Math.b2Vec2();
+    this.position = new Box2D.Common.Math.b2Vec2(2, 2);
     this.body = RaicerBody.types[0];
     this.gun = RaicerGun.types[0];
     this.tread = RaicerTread.types[0];
@@ -8,6 +8,7 @@ function Raicer() {
     this.length = 200;
     this.speed = 0;
     this.currentPowerUsage=0;
+    this.circuitCompletions = 0;
     // this.radar = RaicerRadar.types[0];
 };
 
@@ -17,8 +18,8 @@ Raicer.prototype.draw = function(context, ysize) {
     this.wholeBody.ApplyImpulse(new Box2D.Common.Math.b2Vec2(this.speed * Math.sin(this.angle), this.speed * Math.cos(this.angle)), this.wholeBody.GetWorldCenter());
 
     
-    this.position.Set(this.wholeBody.GetPosition().x * METER_TO_PIXEL, this.wholeBody.GetPosition().y * METER_TO_PIXEL);
-    context.translate(this.position.x, ysize -  this.position.y);
+    this.position.Set(this.wholeBody.GetPosition().x * METER_TO_PIXEL * 2, this.wholeBody.GetPosition().y * METER_TO_PIXEL * 2);
+    context.translate(this.position.x, this.position.y);
     context.rotate(this.angle);
     context.save();
     this.tread.draw(context);
@@ -44,7 +45,7 @@ Raicer.prototype.implementPhysics = function() {
     fixDef.friction = 0.3;
     fixDef.restitution = 0.4;
     fixDef.shape = new Box2D.Collision.Shapes.b2PolygonShape();
-    fixDef.shape.SetAsBox(1, 1);
+    fixDef.shape.SetAsBox(0.5, 1);
     
     this.wholeBody.CreateFixture(fixDef);
 

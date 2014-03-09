@@ -3,7 +3,7 @@ function RaicerBody() {
     this.weight = 1; // Not sure about units yet
     this.name = "defaultBodyName";
     this.description = "defaultBodyDescription";
-    this.image.src = "res/defaultbody.png";
+    this.image.src = "res/our_true_car.png";
 }
 
 // RaicerBody.prototype = new RaicerComponent();
