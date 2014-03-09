@@ -118,6 +118,11 @@ a
     min-width: 60%;
     -webkit-filter: invert(0%);
 }
+.img-1000
+{
+    width: 100%;
+    margin-left: -1.25%;  
+}
 #nav
 {
     list-style: none;
