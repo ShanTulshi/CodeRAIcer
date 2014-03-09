@@ -1,4 +1,18 @@
-
+var codelist = document.getElementById("codelist");
+var firebase = new Firebase("https://coderaicing.firebaseIO.com/");
+if (localStorage.getItem("facebookUID") != null && localStorage.getItem("facebookUID") != "null") {
+    var uid = localStorage.getItem("facebookUID");
+    var codes = firebase.child(uid).child("code");
+    var i = 0;
+    codes.on('child_added', function(data) {
+	var option = document.createElement("option");
+	option.text = "Code " + i;
+	option.firebaseId = data.name();
+	codelist.add(option);
+	codelist.selectedIndex = codelist.length - 1;
+	i++;
+    });
+}
 
 // Game Logic
 var canvas = document.getElementById("gameCanvas");
@@ -114,4 +128,34 @@ function toggleRunning(button) {
 	frame.contentWindow.init();
     }
     running = !running;
+}
+
+function saveCode() {
+    if (localStorage.getItem("facebookUID") != null && localStorage.getItem("facebookUID") != "null") {
+	var uid = localStorage.getItem("facebookUID");
+	var codes = firebase.child(uid).child("code");
+	var selectedId = codelist.options[codelist.selectedIndex].firebaseId;
+	codes.child(selectedId).set(editor.getValue());
+    }
+}
+
+function loadCode() {
+    if (localStorage.getItem("facebookUID") != null && localStorage.getItem("facebookUID") != "null") {
+	var uid = localStorage.getItem("facebookUID");
+	var codes = firebase.child(uid).child("code");
+	var selectedId = codelist.options[codelist.selectedIndex].firebaseId;
+	var ref = codes.child(selectedId);
+	ref.once("value", function(data) {
+	    editor.setValue(data.val());
+	});
+    }
+}
+
+function newCode() {
+    if (localStorage.getItem("facebookUID") != null && localStorage.getItem("facebookUID") != "null") {
+	var uid = localStorage.getItem("facebookUID");
+	var codes = firebase.child(uid).child("code");
+	var data = codes.push("");
+	loadCode();
+    }
 }
