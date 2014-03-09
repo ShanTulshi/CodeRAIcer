@@ -1,6 +1,7 @@
 function login() {
     var firebase = new Firebase("https://coderaicing.firebaseio.com");
     var auth = new FirebaseSimpleLogin(firebase, function(error, user) {
+	console.log(error);
 	if (error) {
 	    alert("There was an error logging in. Please try again.");
 	    localStorage.setItem("facebookUID", null);
